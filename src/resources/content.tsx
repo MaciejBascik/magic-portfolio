@@ -1,21 +1,35 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import {
+  About,
+  Blog,
+  Gallery,
+  Home,
+  Newsletter,
+  Person,
+  Social,
+  Work,
+} from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Maciej",
+  lastName: "Baścik",
+  name: `Maciej Baścik`,
+  role: "Fullstack Developer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "maciej.b4scik@gmail.com",
+  location: "Europe/Warsaw", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["Polski", "Angielski"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  title: <>Zasubskrybuj mój newsletter</>,
+  description: (
+    <>
+      Mój newsletter zawiera informację o noiwnkach technologicznych, inżynierii
+      i trendach rynkowych.
+    </>
+  ),
 };
 
 const social: Social = [
@@ -25,25 +39,13 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/MaciejBascik",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://pl.linkedin.com/in/maciejbascik",
     essential: true,
   },
   {
@@ -58,9 +60,13 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: `${person.name} – ${person.role}`,
+  description: `Portfolio przedstawiające moje dotychczasowe projekty i doświadczenie zawodowe. Zapraszam do zapoznania się z moją pracą!`,
+  headline: (
+    <>
+      Rozwiązuję problemy biznesowe, których nikt inny nie chce mieć na głowie
+    </>
+  ),
   featured: {
     display: true,
     title: (
@@ -68,7 +74,7 @@ const home: Home = {
         <strong className="ml-4">Once UI</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Projekty
         </Text>
       </Row>
     ),
@@ -76,16 +82,21 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      Jestem Maciej Baścik, Pomagam startupom i firmom technologicznym budować{" "}
+      <Text as="span" size="xl" weight="strong">
+        MVP i platformy SaaS
+      </Text>
+      , gdzie tworzę intuicyjne <br /> doświadczenia użytkowników. Po godzinach
+      buduję moje własne projekty.
+    </>
   ),
 };
 
 const about: About = {
   path: "/about",
   label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  title: `O mnie – ${person.name}`,
+  description: `Dowiedz się więcej o ${person.name}, ${person.role} z ${person.location}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -102,28 +113,35 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Pomagam startupom i firmom technologicznym budować MVP i platformy SaaS
+        w Next.js + Strapi. SPECJALIZACJA: SaaS MVP Development TECH STACK: HTML
+        / CSS (SCSS) / JavaScript / TypeScript / ReactJS/ NextJS + MongoDB/MySQL
+        / React Native , Git, C++, PHP, Python + Django, Wordpress, AWS/Amplify,
+        strapi, directus REZULTATY: Średnio 6 tygodni od pomysłu do działającego
+        MVP PERFORMANCE: Aplikacje ładujące się poniżej 1s, 99.9% uptime
+        WSPÓŁPRACUJĘ Z: - Startupy technologiczne (pre-seed do Series A) - Firmy
+        digitalizujące procesy biznesowe - Agencje potrzebujące partnera
+        technicznego
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Doświadczenie zawodowe",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Papillon Media",
+        timeframe: "2023 - 2024",
+        role: "Programista Fullstack",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Projektowanie i rozwój aplikacji webowych typu full-stack z
+            wykorzystaniem Next.js (frontend) oraz Strapi (headless CMS /
+            backend) lub directus
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Tworzenie responsywnych interfejsów użytkownika w React / Next.js z
+            naciskiem na UX i wydajność
           </>,
         ],
         images: [
@@ -137,17 +155,65 @@ const about: About = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "ByteFine",
+        timeframe: "2024 - 2024",
+        role: "Programista Fullstack",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Implementacja API REST / GraphQL w Strapi oraz integracja z
+            frontendem Next.js, umożliwiając dynamiczne zarządzanie treścią i
+            funkcjonalnościami aplikacji.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Optymalizacja wydajności aplikacji poprzez implementację najlepszych
+            praktyk w Next.js, takich jak server-side rendering (SSR) i static
+            site generation (SSG), co skutkowało szybszym ładowaniem stron i
+            lepszym doświadczeniem użytkownika.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Bizneto",
+        timeframe: "2024 - 2025",
+        role: "Programista Fullstack",
+        achievements: [
+          <>
+            Optymalizacja wydajności aplikacji (SSR, SSG, ISR, code splitting),
+            co skutkowało szybszym ładowaniem stron i lepszym doświadczeniem
+            użytkownika.
+          </>,
+          <>
+            Implementacja API REST / GraphQL w Strapi oraz integracja z
+            frontendem Next.js, umożliwiając dynamiczne zarządzanie treścią i
+            funkcjonalnościami aplikacji.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Samozatrudnienie",
+        timeframe: "2022 - Obecnie",
+        role: "Programista Fullstack",
+        achievements: [
+          <>
+            Współpraca z klientami w celu zrozumienia ich potrzeb i dostarczania
+            rozwiązań technologicznych, które spełniają ich wymagania biznesowe.
+          </>,
+          <>
+            Implementacja API REST / GraphQL w Strapi oraz integracja z
+            frontendem Next.js, umożliwiając dynamiczne zarządzanie treścią i
+            funkcjonalnościami aplikacji.
+          </>,
+          <>
+            Analiza konkurencji i trendów rynkowych w celu dostarczania
+            innowacyjnych rozwiązań technologicznych, które wyróżniają się na
+            tle konkurencji.
+          </>,
+          <>
+            Pomoc w budowie marki osobistej klientów poprzez tworzenie
+            profesjonalnych stron internetowych, które prezentują ich
+            umiejętności, doświadczenie i osiągnięcia w atrakcyjny sposób.
           </>,
         ],
         images: [],
@@ -155,7 +221,7 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Studies",
     institutions: [
       {
@@ -169,7 +235,7 @@ const about: About = {
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Technical skills",
     skills: [
       {
@@ -235,17 +301,17 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  title: "Piszę o trendach technologicznych i wiele więcej...",
+  description: `Przeczytaj co ${person.name} ostatnio opisywał`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  label: "Projekty",
+  title: `Projekty – ${person.name}`,
+  description: `Ostatnie realizacje - ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
